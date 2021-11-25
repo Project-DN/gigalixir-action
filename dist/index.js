@@ -1164,11 +1164,16 @@ async function run () {
 
       try {
         await core.group('Running migrations', async () => {
-          const args = ['ps:migrate', `--app_name=${gigalixirApp}`]
+          const args = [
+            'run',
+            'mix',
+            'ecto.migrate',
+            `--app_name=${gigalixirApp}`
+          ]
 
-          if (migrationAppName.length > 0) {
-            args.push(`--migration_app_name="${migrationAppName}"`)
-          }
+          // if (migrationAppName.length > 0) {
+          //   args.push(`--migration_app_name="${migrationAppName}"`)
+          // }
 
           await exec.exec('gigalixir', args)
         })
