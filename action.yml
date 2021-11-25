@@ -21,6 +21,10 @@ inputs:
     description: 'Configuration for migrations'
     required: true
     default: true
+  MIGRATION_APP_NAME:
+    description: 'Name of the app that contains migrations (useful for umbrella apps)'
+    required: false
+    default: ''
   SSH_PRIVATE_KEY:
     description: 'Your ssh private key that is paired with a public key that is uploaded to Gigalixir'
     required: ${MIGRATIONS}
